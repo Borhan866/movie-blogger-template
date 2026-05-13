@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gdata/caja' xmlns:data='http://www.google.com/2005/gdata' xmlns:expr='http://www.google.com/2005/gdata/caja'>
+<head>
+    <meta charset='utf-8'/>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <meta name='description' content='Professional Movie Blogger Template - Netflix style design'/>
+    <meta name='keywords' content='movie, blogger, template, streaming'/>
+    <meta name='author' content='MovieHub'/>
+    <meta property='og:title' content='Professional Movie Blogger Template'/>
+    <meta property='og:description' content='আধুনিক মুভি ব্লগার টেমপ্লেট'/>
+    <meta property='og:type' content='website'/>
+    
+    <title>MovieHub - Professional Movie Blogger Template</title>
+    
+    <!-- CSS -->
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' rel='stylesheet'/>
+    
+    <style type='text/css'>
+    /* CSS Variables */
+    :root {
+        --primary-color: #e50914;
+        --secondary-color: #221f1f;
+        --text-color: #ffffff;
+        --card-bg: #2f2f2f;
+        --border-color: #404040;
+        --hover-bg: #3a3a3a;
+        --accent-color: #ffc107;
+        --rating-color: #ff9800;
+    }
+    
+    /* Global Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+    
+    /* Navbar */
+    .navbar {
+        background: linear-gradient(135deg, rgba(34,31,31,0.95) 0%, rgba(20,20,20,0.98) 100%);
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        border-bottom: 2px solid var(--primary-color);
+    }
+    
+    .navbar-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+        color: var(--accent-color);
+        transform: scale(1.05);
+    }
+    
+    .navbar-menu {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    .navbar-menu a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+    }
+    
+    .navbar-menu a:hover {
+        color: var(--primary-color);
+        background: rgba(229, 9, 20, 0.1);
+    }
+    
+    /* Search Bar */
+    .search-box {
+        display: flex;
+        align-items: center;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid var(--border-color);
+        border-radius: 25px;
+        padding: 0.5rem 1rem;
+        width: 250px;
+    }
+    
+    .search-box input {
+        background: none;
+        border: none;
+        color: var(--text-color);
+        outline: none;
+        width: 100%;
+    }
+    
+    .search-box input::placeholder {
+        color: rgba(255,255,255,0.6);
+    }
+    
+    .search-box button {
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+        font-size: 1.1rem;
+    }
+    
+    /* Featured Section */
+    .featured-section {
+        position: relative;
+        height: 450px;
+        margin: 2rem 0;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .featured-slider {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .featured-item {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .featured-item.active {
+        opacity: 1;
+    }
+    
+    .featured-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+        display: flex;
+        align-items: flex-end;
+        padding: 2rem;
+    }
+    
+    .featured-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+    }
+    
+    .featured-content p {
+        color: rgba(255,255,255,0.8);
+        margin-bottom: 1.5rem;
+        max-width: 600px;
+    }
+    
+    .featured-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .btn-primary {
+        background: var(--primary-color);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background: #c20812;
+        transform: scale(1.05);
+    }
+    
+    .btn-secondary {
+        background: rgba(255,255,255,0.2);
+        color: white;
+        border: 2px solid white;
+    }
+    
+    .btn-secondary:hover {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+    
+    /* Container */
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Main Layout */
+    .main-layout {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    /* Sections */
+    .section {
+        margin: 2rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .section-title i {
+        color: var(--primary-color);
+    }
+    
+    /* Movie Grid */
+    .movie-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .movie-card {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--card-bg);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        height: 300px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    
+    .movie-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 30px rgba(229, 9, 20, 0.4);
+    }
+    
+    .movie-poster {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background: linear-gradient(135deg, var(--card-bg), var(--hover-bg));
+    }
+    
+    .movie-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.9));
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .movie-card:hover .movie-info {
+        opacity: 1;
+    }
+    
+    .movie-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+    
+    .movie-rating {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .movie-rating i {
+        color: var(--rating-color);
+        font-size: 0.85rem;
+    }
+    
+    .movie-rating span {
+        font-size: 0.85rem;
+        color: var(--rating-color);
+    }
+    
+    .movie-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .movie-actions button {
+        background: var(--primary-color);
+        border: none;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.2s ease;
+    }
+    
+    .movie-actions button:hover {
+        background: var(--accent-color);
+        color: black;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+        position: sticky;
+        top: 80px;
+    }
+    
+    .sidebar-widget {
+        background: var(--card-bg);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border-color);
+    }
+    
+    .sidebar-widget h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .sidebar-widget ul {
+        list-style: none;
+    }
+    
+    .sidebar-widget ul li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .sidebar-widget ul li:last-child {
+        border-bottom: none;
+    }
+    
+    .sidebar-widget ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .sidebar-widget ul li a:hover {
+        color: var(--primary-color);
+        padding-left: 0.5rem;
+    }
+    
+    /* Footer */
+    footer {
+        background: linear-gradient(135deg, rgba(34,31,31,0.95) 0%, rgba(20,20,20,0.98) 100%);
+        color: var(--text-color);
+        padding: 3rem 0 1rem;
+        margin-top: 4rem;
+        border-top: 2px solid var(--primary-color);
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-section h4 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+        color: var(--primary-color);
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        background: var(--accent-color);
+        color: black;
+        transform: translateY(-5px);
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+        color: rgba(255,255,255,0.7);
+    }
+    
+    /* Back to Top Button */
+    #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        z-index: 999;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+    }
+    
+    #backToTop:hover {
+        background: var(--accent-color);
+        color: black;
+        transform: translateY(-5px);
+    }
+    
+    #backToTop.show {
+        display: flex;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+        .main-layout {
+            grid-template-columns: 1fr;
+        }
+        
+        .sidebar {
+            position: static;
+        }
+        
+        .navbar-menu {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .search-box {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .movie-grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+        
+        .featured-content h2 {
+            font-size: 1.5rem;
+        }
+        
+        .featured-content p {
+            font-size: 0.9rem;
+        }
+        
+        .featured-buttons {
+            flex-wrap: wrap;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .movie-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .navbar-brand {
+            font-size: 1.3rem;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+        }
+    }
+    
+    /* Advertisement Space */
+    .ad-space {
+        background: var(--card-bg);
+        border: 1px dashed var(--border-color);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        color: rgba(255,255,255,0.5);
+        margin: 2rem 0;
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class='navbar'>
+        <div class='navbar-container'>
+            <a href='/' class='navbar-brand'>
+                <i class='fas fa-film'></i>
+                MovieHub
+            </a>
+            <ul class='navbar-menu'>
+                <li><a href='/'>হোম</a></li>
+                <li><a href='/search/label/movies'>মুভি</a></li>
+                <li><a href='/search/label/series'>সিরিজ</a></li>
+                <li><a href='/search/label/trending'>ট্রেন্ডিং</a></li>
+                <li><a href='/about'>সম্পর্কে</a></li>
+                <li><a href='/contact'>যোগাযোগ</a></li>
+            </ul>
+            <div class='search-box'>
+                <input type='text' placeholder='সার্চ করুন...'/>
+                <button type='submit'><i class='fas fa-search'></i></button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Featured Section -->
+    <div class='featured-section'>
+        <div class='featured-slider'>
+            <div class='featured-item active' style='background-image: linear-gradient(135deg, #e50914, #221f1f);'>
+                <div class='featured-overlay'>
+                    <div class='featured-content'>
+                        <h2>সেরা মুভি অভিজ্ঞতা পান</h2>
+                        <p>হলিউড, বলিউড এবং আরও অনেক ছবি এক জায়গায়। আপনার প্রিয় মুভি এখানে খুঁজে পান।</p>
+                        <div class='featured-buttons'>
+                            <button class='btn btn-primary'>
+                                <i class='fas fa-play'></i> এখনই দেখুন
+                            </button>
+                            <button class='btn btn-secondary'>
+                                <i class='fas fa-plus'></i> ওয়াচলিস্টে যোগ করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class='container'>
+        <!-- Header Advertisement -->
+        <div class='ad-space'>
+            <p>এখানে বিজ্ঞাপন থাকবে</p>
+        </div>
+        
+        <!-- Main Layout -->
+        <div class='main-layout'>
+            <main>
+                <!-- Trending Section -->
+                <section class='section'>
+                    <h2 class='section-title'>
+                        <i class='fas fa-fire'></i> ট্রেন্ডিং এখন
+                    </h2>
+                    <div class='movie-grid'>
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=Movie+1' class='movie-poster' alt='মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>মুভি শিরোনাম 1</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>8.5</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=Movie+2' class='movie-poster' alt='মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>মুভি শিরোনাম 2</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>8.2</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=Movie+3' class='movie-poster' alt='মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>মুভি শিরোনাম 3</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>7.9</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=Movie+4' class='movie-poster' alt='মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>মুভি শিরোনাম 4</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>8.7</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Latest Section -->
+                <section class='section'>
+                    <h2 class='section-title'>
+                        <i class='fas fa-calendar-alt'></i> সর্বশেষ রিলিজ
+                    </h2>
+                    <div class='movie-grid'>
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=New+Movie+1' class='movie-poster' alt='নতুন মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>নতুন মুভি 1</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>8.1</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=New+Movie+2' class='movie-poster' alt='নতুন মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>নতুন মুভি 2</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>7.8</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=New+Movie+3' class='movie-poster' alt='নতুন মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>নতুন মুভি 3</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>8.4</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=New+Movie+4' class='movie-poster' alt='নতুন মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>নতুন মুভি 4</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>8.0</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- In-Article Advertisement -->
+                <div class='ad-space'>
+                    <p>এখানে বিজ্ঞাপন থাকবে</p>
+                </div>
+                
+                <!-- Popular Section -->
+                <section class='section'>
+                    <h2 class='section-title'>
+                        <i class='fas fa-crown'></i> শীর্ষ রেটেড
+                    </h2>
+                    <div class='movie-grid'>
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=Top+Movie+1' class='movie-poster' alt='শীর্ষ মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>শীর্ষ মুভি 1</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>9.2</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=Top+Movie+2' class='movie-poster' alt='শীর্ষ মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>শীর্ষ মুভি 2</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>9.0</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=Top+Movie+3' class='movie-poster' alt='শীর্ষ মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>শীর্ষ মুভি 3</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>8.9</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='movie-card'>
+                            <img src='https://via.placeholder.com/200x300?text=Top+Movie+4' class='movie-poster' alt='শীর্ষ মুভি'/>
+                            <div class='movie-info'>
+                                <h3 class='movie-title'>শীর্ষ মুভি 4</h3>
+                                <div class='movie-rating'>
+                                    <i class='fas fa-star'></i>
+                                    <span>8.8</span>
+                                </div>
+                                <div class='movie-actions'>
+                                    <button><i class='fas fa-play'></i></button>
+                                    <button><i class='fas fa-share'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            
+            <!-- Sidebar -->
+            <aside class='sidebar'>
+                <!-- Categories Widget -->
+                <div class='sidebar-widget'>
+                    <h3><i class='fas fa-list'></i> ক্যাটাগরি</h3>
+                    <ul>
+                        <li><a href='/search/label/hollywood'>হলিউড <span>(45)</span></a></li>
+                        <li><a href='/search/label/bollywood'>বলিউড <span>(32)</span></a></li>
+                        <li><a href='/search/label/animation'>অ্যানিমেশন <span>(28)</span></a></li>
+                        <li><a href='/search/label/series'>সিরিজ <span>(15)</span></a></li>
+                        <li><a href='/search/label/thriller'>থ্রিলার <span>(22)</span></a></li>
+                        <li><a href='/search/label/drama'>ড্রামা <span>(18)</span></a></li>
+                    </ul>
+                </div>
+                
+                <!-- Popular Posts -->
+                <div class='sidebar-widget'>
+                    <h3><i class='fas fa-heart'></i> জনপ্রিয় পোস্ট</h3>
+                    <ul>
+                        <li><a href='#'>শীর্ষ হলিউড মুভি 2024</a></li>
+                        <li><a href='#'>সেরা বলিউড ফিল্ম</a></li>
+                        <li><a href='#'>অ্যানিমেশন মাস্টারপিস</a></li>
+                        <li><a href='#'>দেখার যোগ্য সিরিজ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Subscribe Widget -->
+                <div class='sidebar-widget'>
+                    <h3><i class='fas fa-bell'></i> সাবস্ক্রাইব করুন</h3>
+                    <p>সর্বশেষ মুভি আপডেট পেতে সাবস্ক্রাইব করুন</p>
+                    <form style='margin-top: 1rem;'>
+                        <input type='email' placeholder='আপনার ইমেইল' style='width: 100%; padding: 0.5rem; border: none; border-radius: 4px; background: var(--hover-bg); color: white; margin-bottom: 0.5rem;'/>
+                        <button type='submit' class='btn btn-primary' style='width: 100%;'>সাবস্ক্রাইব করুন</button>
+                    </form>
+                </div>
+                
+                <!-- Sidebar Advertisement -->
+                <div class='ad-space' style='min-height: 300px;'>
+                    <p>বিজ্ঞাপন স্থান</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class='container'>
+            <div class='footer-content'>
+                <div class='footer-section'>
+                    <h4>আমাদের সম্পর্কে</h4>
+                    <p>MovieHub একটি আধুনিক মুভি ব্লগিং প্ল্যাটফর্ম যেখানে আপনি হলিউড, বলিউড এবং আরও অনেক ছবি খুঁজে পেতে পারেন।</p>
+                </div>
+                <div class='footer-section'>
+                    <h4>দ্রুত লিঙ্ক</h4>
+                    <ul>
+                        <li><a href='/'>হোম</a></li>
+                        <li><a href='/about'>সম্পর্কে</a></li>
+                        <li><a href='/contact'>যোগাযোগ</a></li>
+                        <li><a href='/dmca'>DMCA</a></li>
+                    </ul>
+                </div>
+                <div class='footer-section'>
+                    <h4>ক্যাটাগরি</h4>
+                    <ul>
+                        <li><a href='/search/label/movies'>মুভি</a></li>
+                        <li><a href='/search/label/series'>সিরিজ</a></li>
+                        <li><a href='/search/label/trending'>ট্রেন্ডিং</a></li>
+                        <li><a href='/search/label/top-rated'>শীর্ষ রেটেড</a></li>
+                    </ul>
+                </div>
+                <div class='footer-section'>
+                    <h4>আমাদের অনুসরণ করুন</h4>
+                    <div class='social-links'>
+                        <a href='https://facebook.com' target='_blank' title='Facebook'>
+                            <i class='fab fa-facebook-f'></i>
+                        </a>
+                        <a href='https://youtube.com' target='_blank' title='YouTube'>
+                            <i class='fab fa-youtube'></i>
+                        </a>
+                        <a href='https://telegram.me' target='_blank' title='Telegram'>
+                            <i class='fab fa-telegram'></i>
+                        </a>
+                        <a href='https://instagram.com' target='_blank' title='Instagram'>
+                            <i class='fab fa-instagram'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class='footer-bottom'>
+                <p>&copy; 2024 MovieHub. সর্বাধিকার সংরক্ষিত। তৈরি করা হয়েছে ভালোবাসা দিয়ে ❤️</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id='backToTop'>
+        <i class='fas fa-chevron-up'></i>
+    </button>
+    
+    <!-- JavaScript -->
+    <script>
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Search functionality
+    document.querySelector('.search-box button').addEventListener('click', function(e) {
+        e.preventDefault();
+        const searchValue = document.querySelector('.search-box input').value;
+        if (searchValue) {
+            window.location.href = '/search?q=' + encodeURIComponent(searchValue);
+        }
+    });
+    
+    // Featured Slider Auto-rotate
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.featured-item');
+    
+    function showSlide(n) {
+        if (n >= slides.length) {
+            currentSlide = 0;
+        }
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[currentSlide].classList.add('active');
+    }
+    
+    setInterval(function() {
+        currentSlide++;
+        showSlide(currentSlide);
+    }, 5000);
+    
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    </script>
+</body>
+</html>
