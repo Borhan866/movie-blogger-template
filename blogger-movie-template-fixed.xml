@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gdata/caja' xmlns:data='http://www.google.com/2005/gdata' xmlns:expr='http://www.google.com/2005/gdata/caja'>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<b:skin>
+<![CDATA[
+/* Root Colors */
+:root {
+--primary-color: #e50914;
+--secondary-color: #221f1f;
+--text-color: #ffffff;
+--card-bg: #2f2f2f;
+--border-color: #404040;
+--hover-bg: #3a3a3a;
+--accent-color: #ffc107;
+--rating-color: #ff9800;
+}
+
+/* Global Styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background-color: #221f1f;
+color: #ffffff;
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+overflow-x: hidden;
+}
+
+html, body {
+width: 100%;
+height: 100%;
+}
+
+/* Navbar */
+#header-wrapper {
+background: linear-gradient(135deg, rgba(34,31,31,0.95) 0%, rgba(20,20,20,0.98) 100%);
+padding: 1rem 0;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+border-bottom: 2px solid #e50914;
+}
+
+#header h1 {
+color: #e50914;
+font-size: 2rem;
+margin: 0;
+padding: 0.5rem 0;
+}
+
+#header h1 a {
+color: #e50914;
+text-decoration: none;
+}
+
+#header h1 a:hover {
+color: #ffc107;
+}
+
+#header-inner {
+padding: 0 20px;
+}
+
+.description {
+color: #999;
+font-size: 0.9rem;
+display: none;
+}
+
+/* Blog Title */
+#blog-title {
+font-size: 2rem;
+color: #e50914;
+}
+
+/* Main Wrapper */
+#main-wrapper {
+background: #221f1f;
+}
+
+.content-outer {
+background: transparent;
+}
+
+/* Posts */
+.post {
+background: #2f2f2f;
+border-radius: 8px;
+padding: 1.5rem;
+margin-bottom: 2rem;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+border: 1px solid #404040;
+}
+
+.post-title {
+color: #e50914;
+font-size: 1.5rem;
+margin-bottom: 0.5rem;
+}
+
+.post-title a {
+color: #e50914;
+text-decoration: none;
+}
+
+.post-title a:hover {
+color: #ffc107;
+}
+
+.post-meta {
+color: #999;
+font-size: 0.9rem;
+margin-bottom: 1rem;
+}
+
+.post-body {
+color: #fff;
+line-height: 1.8;
+}
+
+.post-body img {
+max-width: 100%;
+height: auto;
+border-radius: 8px;
+margin: 1rem 0;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+background: transparent;
+}
+
+.sidebar-content {
+background: transparent;
+}
+
+.widget {
+background: #2f2f2f;
+border-radius: 8px;
+padding: 1.5rem;
+margin-bottom: 1.5rem;
+border: 1px solid #404040;
+box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.widget h2 {
+color: #e50914;
+font-size: 1.2rem;
+margin-bottom: 1rem;
+border-bottom: 2px solid #e50914;
+padding-bottom: 0.5rem;
+}
+
+.widget ul {
+list-style: none;
+}
+
+.widget li {
+padding: 0.5rem 0;
+border-bottom: 1px solid #404040;
+}
+
+.widget li:last-child {
+border-bottom: none;
+}
+
+.widget a {
+color: #fff;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+.widget a:hover {
+color: #e50914;
+padding-left: 0.5rem;
+}
+
+/* Footer */
+#footer-wrapper {
+background: linear-gradient(135deg, rgba(34,31,31,0.95) 0%, rgba(20,20,20,0.98) 100%);
+color: #fff;
+padding: 2rem 0 1rem;
+border-top: 2px solid #e50914;
+text-align: center;
+}
+
+#footer h2 {
+color: #e50914;
+font-size: 1.2rem;
+margin-bottom: 1rem;
+}
+
+#footer a {
+color: #999;
+text-decoration: none;
+}
+
+#footer a:hover {
+color: #e50914;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+#header h1 {
+font-size: 1.5rem;
+}
+
+.post {
+padding: 1rem;
+}
+
+.post-title {
+font-size: 1.2rem;
+}
+
+.widget {
+padding: 1rem;
+}
+
+#main-wrapper {
+margin: 0;
+}
+}
+
+/* Links */
+a {
+color: #e50914;
+text-decoration: none;
+}
+
+a:hover {
+color: #ffc107;
+}
+
+/* Buttons */
+.button {
+background: #e50914;
+color: white;
+padding: 0.5rem 1rem;
+border-radius: 4px;
+border: none;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.button:hover {
+background: #c20812;
+}
+
+/* Labels */
+.label {
+display: inline-block;
+background: #e50914;
+color: white;
+padding: 0.25rem 0.75rem;
+border-radius: 4px;
+margin: 0.25rem;
+font-size: 0.85rem;
+}
+
+/* Comments */
+#comments {
+background: #2f2f2f;
+border-radius: 8px;
+padding: 1.5rem;
+border: 1px solid #404040;
+}
+
+.comment {
+background: #3a3a3a;
+padding: 1rem;
+margin-bottom: 1rem;
+border-radius: 4px;
+border-left: 3px solid #e50914;
+}
+
+.comment-author {
+color: #e50914;
+font-weight: bold;
+}
+
+.comment-date {
+color: #999;
+font-size: 0.85rem;
+}
+]]>
+</b:skin>
+
+<style type='text/css'>
+/* Additional Styles */
+.featured-section {
+background: linear-gradient(135deg, #e50914, #221f1f);
+padding: 2rem;
+border-radius: 8px;
+margin-bottom: 2rem;
+color: white;
+}
+
+.featured-section h2 {
+font-size: 2rem;
+margin-bottom: 1rem;
+color: #ffc107;
+}
+
+.featured-section p {
+color: rgba(255,255,255,0.8);
+margin-bottom: 1rem;
+}
+
+.movie-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+gap: 1rem;
+margin: 1.5rem 0;
+}
+
+.movie-card {
+background: #2f2f2f;
+border-radius: 8px;
+overflow: hidden;
+transition: all 0.3s ease;
+border: 1px solid #404040;
+}
+
+.movie-card:hover {
+box-shadow: 0 8px 30px rgba(229, 9, 20, 0.4);
+transform: scale(1.05);
+}
+
+.movie-card img {
+width: 100%;
+height: 250px;
+object-fit: cover;
+}
+
+.movie-info {
+padding: 0.75rem;
+}
+
+.movie-title {
+color: #fff;
+font-size: 0.9rem;
+font-weight: bold;
+margin-bottom: 0.5rem;
+}
+
+.movie-rating {
+color: #ff9800;
+font-size: 0.85rem;
+}
+
+.ad-space {
+background: #3a3a3a;
+border: 2px dashed #404040;
+border-radius: 8px;
+padding: 2rem;
+text-align: center;
+color: #999;
+margin: 2rem 0;
+min-height: 250px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.back-to-top {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: #e50914;
+color: white;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+display: none;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+z-index: 999;
+box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.back-to-top:hover {
+background: #ffc107;
+color: black;
+}
+</style>
+
+<title><data:blog.title/></title>
+<meta content='<data:blog.description/>' name='description'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' rel='stylesheet'/>
+<b:include data='blog' name='all-head-content'/>
+</head>
+
+<body>
+
+<!-- Header -->
+<div id='header-wrapper'>
+<b:section class='header' id='header' maxwidgets='1' showaddelement='false'>
+<b:widget id='Header1' locked='true' title='MovieHub' type='Header'>
+<b:widgetSettings>
+<b:setting name='displayUrl'>
+<data:blog.url/>
+</b:setting>
+<b:setting name='displayImage'>
+<data:imagePath/>
+</b:setting>
+<b:setting name='useImage'>false</b:setting>
+<b:setting name='subtitle'>আপনার প্রিয় মুভি এক জায়গায়</b:setting>
+</b:widgetSettings>
+<b:includable id='title'>
+<div id='header-inner'>
+<h1 id='blog-title'>
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+<data:blog.title/>
+<else/>
+<a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+</b:if>
+</h1>
+<p class='description'><data:blog.description/></p>
+</div>
+</b:includable>
+</b:widget>
+</b:section>
+</div>
+
+<!-- Main Wrapper -->
+<div id='main-wrapper'>
+<div class='container'>
+
+<!-- Featured Section -->
+<div class='featured-section'>
+<h2>স্বাগতম MovieHub এ</h2>
+<p>হলিউড, বলিউড এবং আরও অনেক মুভি একসাথে উপভোগ করুন। আমাদের বিশাল কালেকশন থেকে আপনার পছন্দের সিনেমা খুঁজে নিন।</p>
+<button class='button'>এখনই দেখুন</button>
+</div>
+
+<!-- Main Content -->
+<div class='content-outer'>
+<div class='content-inner'>
+
+<b:section class='main' id='main' showaddelement='no'>
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+
+<b:includable id='post' var='post'>
+<article class='post'>
+<h2 class='post-title'><a expr:href='data:post.url'><data:post.title/></a></h2>
+<div class='post-meta'>
+<span class='post-date'>
+<data:post.date/>
+</span>
+<span class='post-author'>
+- <data:post.author/>
+</span>
+</div>
+<div class='post-body'>
+<data:post.body/>
+</div>
+<div class='post-labels'>
+<b:if cond='data:post.labels'>
+<span>ট্যাগস:</span>
+<b:loop values='data:post.labels' var='label'>
+<a class='label' expr:href='data:label.url'><data:label.name/></a>
+</b:loop>
+</b:if>
+</div>
+</article>
+</b:includable>
+
+</b:widget>
+</b:section>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Sidebar Wrapper -->
+<div id='sidebar-wrapper'>
+<b:section class='sidebar' id='sidebar' showaddelement='yes'>
+
+<!-- About Widget -->
+<b:widget id='Text1' locked='false' title='আমাদের সম্পর্কে' type='Text'>
+<b:widgetSettings>
+<b:setting name='content'>
+<![CDATA[
+<p>MovieHub একটি আধুনিক মুভি ব্লগিং প্ল্যাটফর্ম যেখানে আপনি সর্বশেষ হলিউড, বলিউড এবং আঞ্চলিক চলচ্চিত্র খুঁজে পেতে পারেন।</p>
+]]>
+</b:setting>
+</b:widgetSettings>
+</b:widget>
+
+<!-- Categories Widget -->
+<b:widget id='Label1' locked='false' title='ক্যাটাগরি' type='Label'>
+</b:widget>
+
+<!-- Popular Posts Widget -->
+<b:widget id='PopularPosts1' locked='false' title='জনপ্রিয় পোস্ট' type='PopularPosts'>
+</b:widget>
+
+<!-- Recent Posts Widget -->
+<b:widget id='BlogArchive1' locked='false' title='সাম্প্রতিক পোস্ট' type='BlogArchive'>
+</b:widget>
+
+</b:section>
+</div>
+
+<!-- Footer -->
+<div id='footer-wrapper'>
+<footer>
+<b:section class='footer' id='footer' showaddelement='no'>
+<b:widget id='Footer1' locked='true' title='Footer' type='Footer'>
+<b:includable id='default'>
+<div class='footer-content'>
+<h2>MovieHub</h2>
+<p>আপনার প্রিয় মুভি স্ট্রিমিং প্ল্যাটফর্ম</p>
+<p>সোশ্যাল মিডিয়ায় আমাদের অনুসরণ করুন:</p>
+<div class='social-links'>
+<a href='https://facebook.com' target='_blank' title='Facebook'>Facebook</a> | 
+<a href='https://youtube.com' target='_blank' title='YouTube'>YouTube</a> | 
+<a href='https://telegram.me' target='_blank' title='Telegram'>Telegram</a>
+</div>
+<p style='margin-top: 1rem; border-top: 1px solid #404040; padding-top: 1rem; color: #999; font-size: 0.9rem;'>
+&copy; 2024 MovieHub. সর্বাধিকার সংরক্ষিত। তৈরি করা হয়েছে ভালোবাসা দিয়ে
+</p>
+</div>
+</b:includable>
+</b:widget>
+</b:section>
+</footer>
+</div>
+
+<!-- Back to Top Button -->
+<button id='backToTopBtn' class='back-to-top' onclick='topFunction()' title='উপরে যান'>↑</button>
+
+<script type='text/javascript'>
+// Back to Top functionality
+var backToTopBtn = document.getElementById("backToTopBtn");
+
+window.onscroll = function() {
+if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+backToTopBtn.style.display = "flex";
+} else {
+backToTopBtn.style.display = "none";
+}
+};
+
+function topFunction() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+var target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth'
+});
+}
+});
+});
+</script>
+
+</body>
+</html>
