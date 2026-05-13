@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gdata/caja' xmlns:data='http://www.google.com/2005/gdata' xmlns:expr='http://www.google.com/2005/gdata/caja'>
+<head>
+<meta charset='utf-8'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<title><data:blog.title/></title>
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' rel='stylesheet'/>
+<b:skin>
+<![CDATA[
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+#header-wrapper {
+  background: linear-gradient(135deg, rgba(34,31,31,0.98) 0%, rgba(20,20,20,0.99) 100%);
+  padding: 1.5rem 0;
+  border-bottom: 3px solid #e50914;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+#header h1 {
+  color: #e50914;
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+#header h1 a {
+  color: #e50914;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#header h1 a:hover {
+  color: #ffc107;
+}
+
+.blog-description {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+/* Main Layout */
+#main-wrapper {
+  background: transparent;
+  padding: 2rem 0;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+}
+
+.content-inner {
+  background: transparent;
+}
+
+.sidebar-inner {
+  background: transparent;
+}
+
+/* Post Styles */
+.post {
+  background: #2f2f2f;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #404040;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.post:hover {
+  box-shadow: 0 6px 20px rgba(229,9,20,0.2);
+}
+
+.post-title {
+  color: #e50914;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.post-title a {
+  color: #e50914;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.post-title a:hover {
+  color: #ffc107;
+}
+
+.post-meta {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #404040;
+}
+
+.post-meta a {
+  color: #999;
+  text-decoration: none;
+}
+
+.post-meta a:hover {
+  color: #e50914;
+}
+
+.post-body {
+  color: #ddd;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.post-labels {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.label {
+  display: inline-block;
+  background: #e50914;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.label:hover {
+  background: #ffc107;
+  color: #000;
+}
+
+/* Widget Styles */
+.widget {
+  background: #2f2f2f;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #404040;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.widget h2 {
+  color: #e50914;
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e50914;
+  font-weight: 700;
+}
+
+.widget ul {
+  list-style: none;
+}
+
+.widget li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #404040;
+}
+
+.widget li:last-child {
+  border-bottom: none;
+}
+
+.widget a {
+  color: #ddd;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget a:hover {
+  color: #e50914;
+  padding-left: 0.5rem;
+}
+
+/* Footer Styles */
+#footer-wrapper {
+  background: linear-gradient(135deg, rgba(34,31,31,0.98) 0%, rgba(20,20,20,0.99) 100%);
+  border-top: 3px solid #e50914;
+  padding: 2rem 0 1rem;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
+}
+
+.footer-content {
+  text-align: center;
+  color: #999;
+}
+
+.footer-content h3 {
+  color: #e50914;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.footer-content p {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #999;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.social-links a:hover {
+  color: #e50914;
+}
+
+.footer-bottom {
+  border-top: 1px solid #404040;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  #header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .post {
+    padding: 1.25rem;
+  }
+  
+  .post-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* General Links */
+a {
+  color: #e50914;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffc107;
+}
+]]>
+</b:skin>
+<b:include data='blog' name='all-head-content'/>
+</head>
+<body>
+
+<!-- Header -->
+<div id='header-wrapper'>
+  <div class='container'>
+    <b:section class='header' id='header' maxwidgets='1' showaddelement='false'>
+      <b:widget id='Header1' locked='true' title='Movie Blogger' type='Header'>
+        <b:includable id='title'>
+          <h1>
+            <b:if cond='data:blog.url == data:blog.homepageUrl'>
+              <data:blog.title/>
+            <b:else/>
+              <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+            </b:if>
+          </h1>
+          <p class='blog-description'><data:blog.description/></p>
+        </b:includable>
+      </b:widget>
+    </b:section>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div id='main-wrapper'>
+  <div class='container'>
+    <div class='main-layout'>
+      
+      <!-- Posts -->
+      <div class='content-inner'>
+        <b:section class='main' id='main' showaddelement='no'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+            <b:includable id='post' var='post'>
+              <article class='post'>
+                <h2 class='post-title'>
+                  <a expr:href='data:post.url'><data:post.title/></a>
+                </h2>
+                <div class='post-meta'>
+                  <i class='fas fa-calendar'></i> <data:post.date/> | 
+                  <i class='fas fa-user'></i> <data:post.author/>
+                </div>
+                <div class='post-body'>
+                  <data:post.body/>
+                </div>
+                <b:if cond='data:post.labels'>
+                  <div class='post-labels'>
+                    <b:loop values='data:post.labels' var='label'>
+                      <a class='label' expr:href='data:label.url'><data:label.name/></a>
+                    </b:loop>
+                  </div>
+                </b:if>
+              </article>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </div>
+
+      <!-- Sidebar -->
+      <div class='sidebar-inner'>
+        <b:section class='sidebar' id='sidebar' showaddelement='yes'>
+          
+          <!-- Labels Widget -->
+          <b:widget id='Label1' locked='false' title='ক্যাটাগরি' type='Label'>
+            <b:includable id='default'>
+              <div class='widget'>
+                <h2><i class='fas fa-list'></i> ক্যাটাগরি</h2>
+                <ul>
+                  <b:loop values='data:labels' var='label'>
+                    <li>
+                      <a expr:href='data:label.url'>
+                        <span><data:label.name/></span>
+                        <span>(<data:label.count/>)</span>
+                      </a>
+                    </li>
+                  </b:loop>
+                </ul>
+              </div>
+            </b:includable>
+          </b:widget>
+
+          <!-- Popular Posts -->
+          <b:widget id='PopularPosts1' locked='false' title='জনপ্রিয় পোস্ট' type='PopularPosts'>
+            <b:includable id='default'>
+              <div class='widget'>
+                <h2><i class='fas fa-fire'></i> জনপ্রিয়</h2>
+                <ul>
+                  <b:loop values='data:posts' var='post'>
+                    <li><a expr:href='data:post.url'><data:post.title/></a></li>
+                  </b:loop>
+                </ul>
+              </div>
+            </b:includable>
+          </b:widget>
+
+          <!-- Recent Posts -->
+          <b:widget id='BlogArchive1' locked='false' title='আর্কাইভ' type='BlogArchive'>
+          </b:widget>
+
+        </b:section>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div id='footer-wrapper'>
+  <div class='container'>
+    <div class='footer-content'>
+      <h3>MovieHub</h3>
+      <p>আপনার প্রিয় মুভি স্ট্রিমিং প্ল্যাটফর্ম</p>
+      <div class='social-links'>
+        <a href='https://facebook.com' target='_blank' title='Facebook'><i class='fab fa-facebook'></i> Facebook</a>
+        <a href='https://youtube.com' target='_blank' title='YouTube'><i class='fab fa-youtube'></i> YouTube</a>
+        <a href='https://telegram.me' target='_blank' title='Telegram'><i class='fab fa-telegram'></i> Telegram</a>
+      </div>
+      <div class='footer-bottom'>
+        <p>© 2024 MovieHub. সর্বাধিকার সংরক্ষিত। তৈরি করা হয়েছে ভালোবাসা দিয়ে ❤</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script type='text/javascript'>
+// Back to top button
+var backBtn = document.createElement('button');
+backBtn.id = 'backToTop';
+backBtn.innerHTML = '↑';
+backBtn.style.cssText = 'position: fixed; bottom: 30px; right: 30px; background: #e50914; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; display: none; z-index: 999; box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);';
+document.body.appendChild(backBtn);
+
+window.addEventListener('scroll', function() {
+  if (window.pageYOffset > 300) {
+    backBtn.style.display = 'block';
+  } else {
+    backBtn.style.display = 'none';
+  }
+});
+
+backBtn.addEventListener('click', function() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+</script>
+
+</body>
+</html>
